@@ -1,0 +1,185 @@
+#!/bin/bash
+# case example
+case $1 in
+install)
+pkg install $2
+;;
+reset)
+reset
+;;
+id)
+whoami
+;;
+user)
+whoami
+;;
+get)
+printf '\033[36m';echo getting $2
+sleep 2
+top
+;;
+pwd)
+pwd
+;;
+uninstall)
+pkg uninstall $2
+;;
+delete)
+rm -rf $2
+echo $2 deleted
+;;
+add)
+sh /data/data/com.termux/files/usr/var/Friday.exc/add
+;;
+sub)
+sh /data/data/com.termux/files/usr/var/Friday.exc/sub
+;;
+multi)
+sh /data/data/com.termux/files/usr/var/Friday.exc/mult
+;;
+div)
+sh /data/data/com.termux/files/usr/var/Friday.exc/div
+;;
+info)
+sh /data/data/com.termux/files/usr/var/Friday.exc/logo
+;;
+oddeve)
+sh /data/data/com.termux/files/usr/var/Friday.exc/oddeve
+;;
+text)
+echo text information in $2
+wc $2
+echo "line ,word ,chracter"
+;;
+unzip)
+unzip $2
+;;
+download)
+wget $2
+;;
+free)
+free -h -t
+echo $2 freed 
+;;
+torch)
+termux-torch $2
+echo torch $2
+;;
+speak)
+espeak $2
+;;
+battery)
+termux-battery-$2
+;;
+camera)
+termux-camera-$2
+;;
+enable)
+termux-$2-enable true
+;;
+disable)
+termux-$2-enable false
+;;
+scan)
+termux-$2-scaninfo
+;;
+vibrate)
+termux-vibrate
+;;
+weather)
+sh /data/data/com.termux/files/usr/var/Friday.exc/weather
+;;
+device)
+echo device $2rmation
+neofetch
+;;
+logout)
+exit
+exit
+exit
+sleep 1
+;;
+fingerprint)
+termux-fingerprint
+;;
+capture)
+sleep 1
+termux-camera-photo
+;;
+auto)
+pkg $2 -y
+pkg updrade -y
+pip install --upgrade pip
+;;
+help)
+echo ""
+printf '\033[36m';echo "install <packageName>"
+echo ""
+printf '\033[36m';echo "unistall <packageNam>"
+echo ""
+printf '\033[36m';echo "reset   to reset terminal"
+echo ""
+echo "delete <file/folderName>   to delete file/folder"
+echo ""
+echo "info  to see information about Friday"
+echo ""
+echo "device info   to see device info"
+echo ""
+echo "id   to get user name"
+echo ""
+echo "user   to get user name"
+echo ""
+echo "getpid  to get pid of process"
+echo ""
+echo "pwd   to pwd"
+echo ""
+echo "add  to do addition "
+echo ""
+echo "sub  to do  subtraction"
+echo ""
+echo "multi  to do multiply"
+echo ""
+printf '\033[36m';echo "div   to divide"
+echo ""
+echo "oddeve   to find a number is odd or eve"
+echo ""
+echo "download <link>  to download file from that link"
+echo ""
+printf '\033[36m';echo "text-info <fileName>   to show number of line,word ,character in a file"
+echo ""
+echo "unzip <fileName>   to unzip file"
+echo ""
+echo "weather  to dislay weather"
+echo ""
+echo "enable wifi  to enable wifi"
+echo ""
+echo "disable wifi to disable wifi"
+echo ""
+echo "scan wifi   to show avalable wifi"
+echo ""
+echo "vibrate  to vibrate"
+echo ""
+echo "auto update to auto update"
+echo ""
+echo "speak <word>  to speak a word"
+echo ""
+echo "fingerprint  Use fingerprint sensor on device to check for authentication" 
+echo ""
+printf '\033[36m';echo "free-ram  to free ram"
+echo ""
+echo "tourch on/off   to turn tourch on/off"
+echo ""
+echo "batter status  to show battery info/status"
+echo ""
+echo "camera info  to print camera information"
+echo ""
+echo "capture  to take a photo"
+echo ""
+echo "help  to show this text"
+echo ""
+printf '\033[33m';echo "If any command  is not working make a issue in  github"
+;;
+*)
+printf '\033[36m';echo "I don\'t know, if you want that command made a pull request ,or tell in discussion page."
+;;
+esac
