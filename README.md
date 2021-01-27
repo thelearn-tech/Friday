@@ -17,7 +17,7 @@
 
 ***friday text info <filename>***
 
-Examples 
+# Examples 
 
 ***friday install nano***
 
