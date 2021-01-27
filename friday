@@ -47,8 +47,8 @@ oddeve)
 sh /data/data/com.termux/files/usr/var/Friday.exc/oddeve
 ;;
 text)
-echo text information in $2
-wc $2
+echo text $2rmation in $3
+wc $3
 echo "line ,word ,chracter"
 ;;
 unzip)
