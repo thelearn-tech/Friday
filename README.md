@@ -13,6 +13,10 @@
 ![](https://raw.githubusercontent.com/thelearn-tech/Friday/main/Screenshot_2021-01-26-12-56-12-936_com.termux.jpg)
 ![](https://raw.githubusercontent.com/thelearn-tech/Friday/main/IMG_20210126_125652.jpg)
 
+# Changed Command
+
+***friday text info <filename>***
+
 Examples 
 
 ***friday install nano***
