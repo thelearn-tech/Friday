@@ -30,14 +30,15 @@ Examples
 For **friday weather** you need to install 
 my [**weather-cli**](https://github.com/thelearn-tech/weather-cli)
 
+[**Download weather-cli**](https://github.com/thelearn-tech/weather-cli)
+
 # command utilisation
 
-****friday install***
+***friday install***
 uses **pkg**
 
 ***friday download***
 uses **wget**
 
-[download weather-cli](https://github.com/thelearn-tech/weather-cli)
 
 # Always give me credit if you use ***Friday***
