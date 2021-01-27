@@ -87,7 +87,7 @@ vibrate)
 termux-vibrate
 ;;
 weather)
-sh /data/data/com.termux/files/usr/var/Friday.exc/weather
+weather
 ;;
 device)
 echo device $2rmation
