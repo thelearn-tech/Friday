@@ -1,0 +1,10 @@
+
+printf '\033[33m';echo "   ___  _ _               "          
+printf '\033[33m';echo "  / _ \| | |          "
+printf '\033[33m';echo " / /_\ \ | |__  _   _ "
+printf '\033[33m';echo " |  _  | | '_ \| | | |  \033[32m v1.0 "
+printf '\033[33m';echo " | | | | | |_) | |_| |  \033[32m by Thelearn-tech  "
+printf '\033[33m';echo " \_| |_/_|_.__/ \__, |   "
+printf '\033[33m';echo "                 __/ |  \033[32m Exclusively for \033[34m Pritam Behera"
+printf '\033[33m';echo "                |___/ "
+
