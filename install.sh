@@ -1,6 +1,7 @@
 printf '\033[36m';echo Friday installation script
 echo made by thelearn-tech
 sleep 3
+pkg install nano -y
 pkg install espeak -y
 pkg install curl -y
 pkg install termux-api -y
