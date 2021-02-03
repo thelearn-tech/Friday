@@ -28,6 +28,10 @@
 ***friday info***
 
 ***friday enable wifi***
+# Updated 
+
+**edit** to edit file via **nano**
+**view** to view file via **cat**
 
 # Additional
 
