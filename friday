@@ -111,6 +111,12 @@ pkg $2 -y
 pkg updrade -y
 pip install --upgrade pip
 ;;
+edit)
+nano $2
+;;
+view)
+cat $2
+;;
 help)
 echo ""
 printf '\033[36m';echo "install <packageName>"
@@ -129,6 +135,9 @@ echo "id   to get user name"
 echo ""
 echo "user   to get user name"
 echo ""
+echo "view <fileName> to view file via cat"
+echo ""
+echo "edit <fileNmae> to edit file via nano"
 echo "getpid  to get pid of process"
 echo ""
 echo "pwd   to pwd"
