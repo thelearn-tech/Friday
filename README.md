@@ -14,6 +14,16 @@
  so 
 **Download Termux API by ⬆️ clicking on text.**
 
+# Installation
+
+***git clone https://github.com/thelearn-tech/Friday***
+
+***cd Friday***
+
+***chmod +X install.sh***
+
+***./install.sh***
+
 # Commands
 
 ![](https://raw.githubusercontent.com/thelearn-tech/Friday/main/Screenshot_2021-01-26-12-56-12-936_com.termux.jpg)
