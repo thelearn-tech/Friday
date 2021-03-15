@@ -4,7 +4,7 @@
 
 ![](https://img.shields.io/badge/Maintained-Yes-green)
 
-[![HitCount](http://hits.dwyl.com/thelearn-tech/Friday.svg)](http://hits.dwyl.com/thelearn-tech/Friday)
+
 
 ***Friday*** is a Personal Assistant to use In 
 [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
