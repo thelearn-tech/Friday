@@ -21,6 +21,9 @@ top
 pwd)
 pwd
 ;;
+ip)
+ifconfig | grep inet | awk '{ print $2 }'
+;;
 uninstall)
 pkg uninstall $2
 ;;
@@ -141,6 +144,8 @@ echo "edit <fileNmae> to edit file via nano"
 echo "getpid  to get pid of process"
 echo ""
 echo "pwd   to pwd"
+echo ""
+echo "ip to see IP address"
 echo ""
 echo "add  to do addition "
 echo ""
