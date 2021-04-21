@@ -1,13 +1,14 @@
  #!/bin/bash 
  
  install_requirements() {
+         apt update -y
 	 pkg install nano -y
-     pkg install espeak -y
-     pkg install curl -y
-     pkg install termux-api -y
-     pkg install neofetch
-     pkg install wget -y
-     pkg install python 3 -y
+         pkg install espeak -y
+         pkg install curl -y
+         pkg install termux-api -y
+         pkg install neofetch
+         pkg install wget -y
+         pkg install python 3 -y
  }
  
  install_friday() {
