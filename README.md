@@ -20,7 +20,7 @@
 
 ***cd Friday***
 
-***chmod +X install.sh***
+***chmod +x  install.sh***
 
 ***./install.sh***
 
@@ -44,12 +44,17 @@
 ***friday info***
 
 ***friday enable wifi***
+
 # Updated 
 
-**edit** to edit file via **nano**
+**edit** to edit file via **nano.**
 
 
-**view** to view file via **cat**
+**view** to view file via **cat.**
+
+**chat** to chat with Friday.
+
+**chat** uses **python3**
 
 # Additional
 
@@ -67,4 +72,4 @@ uses **pkg**
 uses **wget**
 
 
-# Always give me credit if you use ***Friday***
+# Friday by thelearn-tech
