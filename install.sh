@@ -7,6 +7,7 @@
      pkg install termux-api -y
      pkg install neofetch
      pkg install wget -y
+     pkg install python 3 -y
  }
  
  install_friday() {
