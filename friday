@@ -21,6 +21,9 @@ top
 pwd)
 pwd
 ;;
+chat)
+python3 /data/data/com.termux/files/usr/var/Friday.exc/chat.py
+;;
 ip)
 ifconfig | grep inet | awk '{ print $2 }'
 ;;
@@ -137,6 +140,8 @@ echo ""
 echo "id   to get user name"
 echo ""
 echo "user   to get user name"
+echo ""
+echo "chat   to chat with Friday"
 echo ""
 echo "view <fileName> to view file via cat"
 echo ""
