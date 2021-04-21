@@ -22,7 +22,7 @@ banner() {
     sleep 2
     clear
     echo ""
-    sh Friday.exc/.forinstall
+    sh Friday.exc/logo
     echo ""
 }
 
