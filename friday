@@ -72,7 +72,7 @@ termux-torch $2
 echo torch $2
 ;;
 speak)
-espeak $2
+termux-tts-speak $2 $3 $4
 ;;
 battery)
 termux-battery-$2
