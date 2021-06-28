@@ -750,11 +750,11 @@ elif [[ $1 == "oddeven" ]]
                                  
 elif [[ $1 == "chat" ]]
  then 
-     python3 /data/data/com.termux/files/usr/home/.Friday/chat.py
+     python3 $HOME/.Friday/chat.py
    
 elif [[ $1 == "rps" ]]
  then 
-     python3 /data/data/com.termux/files/usr/home/.Friday/rock_paper_scissor.py
+     python3 $HOME/.Friday/rock_paper_scissor.py
       
      
 elif [[ $1 == "--check-update" ]]
