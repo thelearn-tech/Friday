@@ -3,8 +3,11 @@
 ![](https://img.shields.io/badge/Code-Shell-green)
 ![](https://img.shields.io/badge/Code-Python-blue)
 ![](https://img.shields.io/badge/Maintained-Yes-green)
-
-
+![](https://img.shields.io/badge/Version-1.2-orange)
+<a href="https://github.com/thelearn-tech/Friday/issues">
+      <img alt="Issues" src="https://img.shields.io/github/issues/thelearn-tech/Friday?color=0088ff" />
+<a href="https://github.com/thelearn-tech/Friday/pull">
+      <img alt="Pulls" src="https://img.shields.io/github/issues-pr/thelearn-tech/Friday?color=0088ff" />
 
 ***Friday*** is a Personal Assistant to use In 
 [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
