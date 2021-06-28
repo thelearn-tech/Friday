@@ -146,12 +146,13 @@ update_me() {
 	if [[ $whbvc == "Yes" ]]
 	 then
 	
-	     cd /data/data/com.termux/files/usr/home
+             cd $HOME
 	     git clone https://github.com/thelearn-tech/Friday
 	     cd Friday
 	     chmod +x install.sh
 	     ./install.sh --update
-	      rm -rf /data/data/com.termux/files/usr/home/Friday
+              cd ..
+	      rm -rf $HOME/Friday
 	      
 	 else 
 	     echo -e "$red user interupt"
