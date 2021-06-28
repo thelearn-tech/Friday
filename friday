@@ -111,7 +111,7 @@ echo -e """
  
  $yellow rps default to play  rock, paper, scissor game.
  
- $green info $default do get information on friday.
+ $green info $default do get information of friday.
  
  $green --self-test $default to perform a self test.
  
