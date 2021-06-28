@@ -26,50 +26,9 @@
 
 # Commands
 
-![](https://raw.githubusercontent.com/thelearn-tech/Friday/main/Screenshot_2021-01-26-12-56-12-936_com.termux.jpg)
-![](https://raw.githubusercontent.com/thelearn-tech/Friday/main/IMG_20210126_125652.jpg)
+![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210628_155448.jpg)
+![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210628_155514.jpg)
 
-# Changed Command
-
-***friday text info <filename>***
-
-# Examples 
-
-***friday install nano***
-
-***friday uninstall nano***
-
-***friday add***
-
-***friday info***
-
-***friday enable wifi***
-
-# Updated 
-
-**edit** to edit file via **nano.**
-
-
-**view** to view file via **cat.**
-
-**chat** to chat with Friday.
-
-**chat** uses **python3**
-
-# Additional
-
-For **friday weather** you need to install 
-my [**weather-cli**](https://github.com/thelearn-tech/weather-cli)
-
-[**Download weather-cli**](https://github.com/thelearn-tech/weather-cli)
-
-# command utilisation
-
-***friday install***
-uses **pkg**
-
-***friday download***
-uses **wget**
 
 
 # Friday by thelearn-tech
