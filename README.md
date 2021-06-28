@@ -5,6 +5,7 @@
 ![](https://img.shields.io/badge/Maintained-Yes-green)
 
 
+# Do not download
 
 ***Friday*** is a Personal Assistant to use In 
 [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
