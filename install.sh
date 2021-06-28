@@ -29,7 +29,8 @@ banner() {
        /          /             
     ,-/-,__  o __/ __.    ,  
    (_/  / (_<_(_/_(_/|_(_/_  
-                      /    
+                        /    
+                      ''
  """
     echo " quick installation script"
 }
