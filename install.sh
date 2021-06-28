@@ -90,8 +90,6 @@ if [[ $1 == "--update" ]]
 else 
      banner
      ask
-     install_requirements
-     install_friday
      end
      exit 1
 
