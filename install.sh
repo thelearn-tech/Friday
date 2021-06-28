@@ -1,13 +1,6 @@
  #!/bin/bash 
  
-green="\e[1;32m"
-lightgreen="\e[0m\e[32m"
-red="\e[1;31m"
-lred="\e[0m\e[31m"
-cyan="\e[1;36m"
-yellow="\e[1;33m"
-orange="\e[1;38;5;214m"
-default="\e[0m"
+
  
  install_requirements() {
          apt update -y
