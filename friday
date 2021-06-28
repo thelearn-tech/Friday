@@ -169,12 +169,13 @@ force_update() {
 	echo "Forcing Update"
 	sleep 1.3
 	clear
-	cd /data/data/com.termux/files/usr/home
+	cd
 	git clone https://github.com/thelearn-tech/Friday
 	cd Friday
 	chmod +x install.sh
 	./install.sh --update
-	rm -rf /data/data/com.termux/files/usr/home/Friday
+	rm -rf $HOME/Friday
+
 	clear      
 	
 }
