@@ -4,7 +4,7 @@
  
  install_requirements() {
          apt update -y
-	     pkg install nano -y
+	 pkg install nano -y
          pkg install termux-api -y
          pkg install neofetch
          pkg install wget -y
@@ -69,7 +69,7 @@ end() {
 	echo " "
 	printf "\033[1;32m"; echo "  Friday installed"
 	echo ""
-	echo -e  "\e[0m type \e[1;32mfriday \e[0m help to begin"
+	echo -e  "\e[0m type \e[1;32mfriday --help \e[0mto begin"
 }	
 	
 if [[ $1 == "--update" ]]
