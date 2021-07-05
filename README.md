@@ -1,10 +1,10 @@
 # Friday
 
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210630_101559.jpg)
-![](https://img.shields.io/badge/Code-Shell-green)
-![](https://img.shields.io/badge/Code-Python-blue)
+![](https://img.shields.io/badge/Code_in-Shell-green)
+![](https://img.shields.io/badge/Code_in-Python-blue)
 ![](https://img.shields.io/badge/Maintained-Yes-green)
-![](https://img.shields.io/badge/Version-1.2.5-orange)
+![](https://img.shields.io/badge/Current_Version-1.2.5-orange)
 <a href="https://github.com/thelearn-tech/Friday/issues">
       <img alt="Issues" src="https://img.shields.io/github/issues/thelearn-tech/Friday?color=0088ff" />
 <a href="https://github.com/thelearn-tech/Friday/pulls">
@@ -42,3 +42,7 @@
 
 
 # Friday by thelearn-tech
+
+# update
+
+![](https://img.shields.io/badge/upcoming_version-1.2.8-orange)
