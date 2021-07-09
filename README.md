@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Code_in-Shell-green)
 ![](https://img.shields.io/badge/Code_in-Python-blue)
 ![](https://img.shields.io/badge/Maintained-Yes-green)
-![](https://img.shields.io/badge/Current_Version-1.2.5-orange)
+![](https://img.shields.io/badge/Current_Version-1.2.9-orange)
 <a href="https://github.com/thelearn-tech/Friday/issues">
       <img alt="Issues" src="https://img.shields.io/github/issues/thelearn-tech/Friday?color=0088ff" />
 <a href="https://github.com/thelearn-tech/Friday/pulls">
