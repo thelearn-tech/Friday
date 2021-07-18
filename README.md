@@ -51,6 +51,7 @@
 
 **May vary overtime**
 
+
 # Commands
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_141105.jpg)
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_140908.jpg)
@@ -58,5 +59,7 @@
 ## Friday by thelearn-tech
 
 # update
+
+*Check for update every 7-10 day.*
 
 ![](https://img.shields.io/badge/upcoming_version-N/A-orange)
