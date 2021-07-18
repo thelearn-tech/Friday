@@ -45,4 +45,4 @@
 
 # update
 
-![](https://img.shields.io/badge/upcoming_version-1.2.8-orange)
+![](https://img.shields.io/badge/upcoming_version-N/A-orange)
