@@ -62,4 +62,4 @@
 
 *Check for update every 7-10 day.*
 
-![](https://img.shields.io/badge/upcoming_version-N/A-orange)
+![](https://img.shields.io/badge/upcoming_version-1.3.1-orange)
