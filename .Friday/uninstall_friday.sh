@@ -19,7 +19,7 @@ read -p "Do Want To Continue [Yes/no]: " why_are_u_deleting_friday
 if [[ $why_are_u_deleting_friday == "Yes" ]]
  then 
      clear
-     echo "\e[0m"
+     echo -e "\e[0m"
      read -p "Any perticular reason [y/n]: " tell_reason_plz
      if [[ $tell_reason_plz == "y" ]]
       then
