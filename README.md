@@ -6,7 +6,7 @@
 
 ![](https://img.shields.io/badge/Maintained-Yes-green)
 
-![](https://img.shields.io/badge/Current_Version-1.3-orange)
+![](https://img.shields.io/badge/Current_Version-1.3.1-orange)
 
 
 <a href="https://github.com/thelearn-tech/Friday/issues">
@@ -62,4 +62,4 @@
 
 *Check for update every 7-10 day.*
 
-![](https://img.shields.io/badge/upcoming_version-1.3.1-orange)
+![](https://img.shields.io/badge/upcoming_version-N/A-orange)
