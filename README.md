@@ -56,7 +56,14 @@
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_141105.jpg)
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_140908.jpg)
 **May vary overtime**
-## Friday by thelearn-tech
+
+
+## Know bugs
+
+`friday set timer` doesn't work first time.
+So, I will recommend setting a `1`sec timer for first
+time, then u can set time as long as u want in **Seconds**.
+
 
 # update
 
