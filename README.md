@@ -61,7 +61,7 @@
 ## Know bugs
 
 `friday set timer` doesn't work first time.
-So, I will recommend setting a `1`sec timer for first
+So, I will recommend setting a `2`sec timer for first
 time, then u can set time as long as u want in **Seconds**.
 
 
