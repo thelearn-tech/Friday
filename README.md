@@ -69,4 +69,4 @@ time, then u can set time as long as u want in **Seconds**.
 
 *Check for update every 7-10 day.*
 
-![](https://img.shields.io/badge/upcoming_version-N/A-orange)
+![](https://img.shields.io/badge/upcoming_version-1.3.2-orange)
