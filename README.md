@@ -15,7 +15,7 @@
       <img alt="Pulls" src="https://img.shields.io/github/issues-pr/thelearn-tech/Friday?color=0088ff" />
 
 </br>
-
+<null></null>
 
 </br>
 
