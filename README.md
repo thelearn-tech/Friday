@@ -19,7 +19,7 @@
 
 </br>
 
-***Friday*** is a Personal Assistant to use in [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
+***Friday*** is a Personal Assistant for [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
 
 **Most of the commands of **Friday** is based on**
 [**Termux API**](https://play.google.com/store/apps/details?id=com.termux.api)
