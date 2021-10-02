@@ -153,7 +153,7 @@ ask() {
 	   clear
 	   install_pkg
 	   check_pkg
-#	   install_friday
+ 	   install_friday
 	   sleep 1
 	   clear
 	   echo " "
