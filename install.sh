@@ -202,6 +202,7 @@ if [[ $1 == "--update" ]]
          clear
          echo -e "\e[0m Updating............."
          echo " "
+         sleep 3
          clear
 	 check_internet_connection 
 	 install_pkg
