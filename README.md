@@ -5,8 +5,7 @@
 ![](https://img.shields.io/badge/Code_in-Python-blue)
 
 ![](https://img.shields.io/badge/Maintained-Yes-green)
-
-![](https://img.shields.io/badge/Current_Version-1.3.1-orange)
+![](https://img.shields.io/badge/Current_Version-1.3.2-orange)
 
 
 <a href="https://github.com/thelearn-tech/Friday/issues">
@@ -47,15 +46,15 @@
 
 
 
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210724_121202.jpg)
+![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_113817.jpg)
 
-**May vary overtime**
+
 
 
 # Commands
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_141105.jpg)
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210718_140908.jpg)
-**May vary overtime**
+![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114338.jpg)
+![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114415.jpg)
+
 
 
 ## Know bugs
@@ -69,4 +68,4 @@ time, then u can set time as long as u want in **Seconds**.
 
 *Check for update every 7-10 day.*
 
-![](https://img.shields.io/badge/upcoming_version-1.3.2-orange)
+![](https://img.shields.io/badge/upcoming_version-N/A-red)
