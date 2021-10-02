@@ -135,7 +135,8 @@ install_friday() {
 
     #installing friday
     
-    chmod -f +x friday                                                                        clear
+    chmod -f +x friday                                                                       
+    clear
     mv friday /data/data/com.termux/files/usr/bin
     mv .Friday /data/data/com.termux/files/home       
     
@@ -212,6 +213,7 @@ if [[ $1 == "--update" ]]
          clear
          echo -e "\e[1;32m Update Finished"
          sleep 1
+         echo " "
          echo -e " Friday: \e[0mStarting selftest "
          sleep 2.5
          friday --self-test
