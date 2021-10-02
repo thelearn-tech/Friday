@@ -17,20 +17,27 @@ install_pkg() {
 }
 
 check_internet_connection()  {
-        printf "\033[1;33m"; echo ""                                echo -n " Checking for Internet:"
+    printf "\033[1;33m"; echo ""                                
+    echo -n " Checking for Internet:"
      #DO NOT COPY
     ping -c 1 www.github.com > /dev/null 2>&1
-    if [[ "$?" != 0 ]]                                              then                                                              # not connected
+    if [[ "$?" != 0 ]]       
+      then                                                             
+    # not connected
       sleep 1
       echo -e  "$red Not Connected"
       sleep 0.7
       echo -e "$default Please connect to Internet."
-      exit 1                                                        else                                                                sleep 0.5                                                       echo -e "$green Connected"
+      exit 1                                                       
+    else                                                                
+        sleep 0.5                                                       
+        echo -e "$green Connected"
         sleep 0.8
         clear
     fi
 }
-                                                      else                                                              
+                                                     
+                                                         
 check_pkg() {
 	clear
 	echo " "
