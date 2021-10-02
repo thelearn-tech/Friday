@@ -1,0 +1,1380 @@
+#!/bin/bash
+
+# Friday personal termux Assistance by thelearn-tech 
+# GNU General Public License v3.0
+
+#       _____               
+#      /          /         
+#   ,-/-,__  o __/ __.    ,   
+#  (_/  / (_<_(_/_(_/|_(_/_   
+#                       /     
+#                     ''
+
+# https://thelearn-tech.github.io/
+
+# https://github.com/thelearn-tech
+# https://github.com/thelearn-tech/Friday
+# https://github.com/thelearn-tech/Friday/pulls
+# https://github.com/thelearn-tech/Friday/issues
+
+
+# color
+green="\e[1;32m"
+lightgreen="\e[0m\e[32m"
+red="\e[1;31m"
+lred="\e[0m\e[31m"
+cyan="\e[1;36m"
+yellow="\e[1;33m"
+orange="\e[1;38;5;214m"
+blue="\e[1;34m"
+default="\e[0m"
+
+
+# some sysinfo
+hm=$(hostname)
+upt=$(uptime -p)
+ker=$(uname -r)
+id=$(whoami)
+
+
+
+# put your country inside " " for weather, not important unless you are
+# using VPN 
+country=" "
+
+# other variable
+
+_start=1
+
+_end=100
+
+
+
+
+
+
+# friday version
+ver="1.3.2"
+
+
+help_text() {
+echo -e """
+ $default 
+
+ $yellow install <packageName>$default to intsall package.
+
+ $yellow uninstall <packageName>$default to remove package.
+ 
+ $yellow delete <file/folder>$default to delete file/folder.
+ 
+ $yellow reset$default to reset terminal.
+ 
+ $yellow copy$default to copy file (only).
+ 
+ $yellow move$default to move file (only).
+ 
+ $yellow rename$default to rename file (only).
+ 
+ $yellow auto update$default to update 'repository'(apt) and 'pip'(python 3).
+ 
+ $yellow user$default to get current loged user's name.
+ 
+ $yellow list processes$default to get pid of processes.
+ 
+ $yellow pwd$default to post working directory.
+ 
+ $yellow device info$default to get device info.
+ 
+ $yellow ip addr$default to get ip address.
+ 
+ $yellow ip pub$default to get public ip address.
+ 
+ $yellow ip info$default to get information on your ip address.
+  
+ $yellow unzip <zipFile>$default to unzip a zip file.
+ 
+ $yellow text info <textFile>$default to get number of line, words, character in a file.
+
+ $yellow file <fileName>$default to see file information.
+
+ $yellow what-file-is <fileName>$default to see file information.
+ 
+ $yellow download <link>$default to download a file with wget.
+ 
+ $yellow edit <fileName>$default to edit file with nano.
+
+ $yellow run <fileName>$default to run a file with './'.
+ 
+ $yellow view <fileName>$default to cat a file.
+ 
+ $yellow weather$default to get weather.
+
+ $yellow check-sum$default to perform a interactive check sum.
+ 
+ $yellow xx <fileName>$default to chmod +x.
+
+ $yellow ux <fileName>$default to chmod -x.
+
+ $yellow open-port$default to scan 127.0.0.1 for open port.
+ 
+ $yellow apache2 start/stop/restart$default to start/stop/reset apapche2.
+
+ $yellow add <firstNum> <secondNum$default to do addition.
+ 
+ $yellow sub <firstNum> <secondNum>$default to do subtraction.
+ 
+ $yellow div <firstNum> <secondNum>$default to do division.
+ 
+ $yellow multi <firstNum> <secondNum>$default to do multiplication.
+ 
+ $yellow area of square/rectriangle$default to find area of square/rectriangle.
+ 
+ $yellow perimeter of square/rectriangle$default to find perimeter of square/rectriangle.
+ 
+ $yellow oddeven <num>$default to check if a num is odd or even.
+
+
+ 
+ $yellow enable/disable/scan wifi$default to turn wifi on/off or scan.
+ 
+ $yellow battery status$default to view battery status. 
+ 
+ $yellow turn torch on/off$default to turn torch on/off.
+ 
+ $yellow torch on/off$default to turn torch on/off.
+ 
+ $yellow say <words>$default to make friday speak.
+ 
+ $yellow read <textFile>$default to read words from a text file.
+
+ $yellow camera info$default to get camera information. 
+ 
+ $yellow set brightness <0-255>$default to set brightness between 0-255.
+ 
+ $yellow set timer$default to set a timer in seconds.
+ 
+ $yellow get location$default to get location. 
+ 
+ $yellow take photo/selfie$default to take pictures.
+ 
+ $yellow list contacts$default to list contacts.
+ 
+ $yellow open <appName>$default to open android app (EX- open list).
+ 
+
+
+ $yellow chat$default to chat with friday.
+ 
+ $yellow rps$default to play  rock, paper, scissor game.
+ 
+ $yellow toss$default to toss a coin (heads or tails).
+ 
+ 
+ 
+ $green info$default do get information of Friday.
+ 
+ $green --report-issue$default opens Friday/issue page on chrome.
+ 
+ $green --self-test$default to perform a self test.
+ 
+ $green --check-update$default to check for update.
+ 
+ $green --force-update$default to force update Friday.
+ 
+ $red --uninstall$default to uninstall Friday.
+ 
+ $green --version$default to get friday version.
+ 
+ $green --help$default to show this text. 
+ 
+ 
+"""
+
+
+}
+
+banner() {
+	brand=$(getprop ro.product.brand) 
+    model=$(getprop ro.product.model)
+    a_ver=$(getprop ro.build.version.release)
+    cpu_type=$(getprop ro.product.cpu.abi)
+  
+	echo -e """ $orange
+        _____               $green  Friday$default@\e[1;32mAndroid $orange 
+      /          /         $default   --------------   $orange
+   ,-/-,__  o __/ __.    ,   $green OS:$default Android $a_ver $cpu_type $orange
+  (_/  / (_<_(_/_(_/|_(_/_   $green Host:$default $brand $model $orange
+                       /     $green Kernel:$default $ker $orange
+                     ''      $green Uptime:$default $upt $orange
+
+                             $green Friday version: $yellow$ver $default
+                             $green By:$blue thelearn-tech       
+                  
+	"""
+	echo -e "$default Developer: $lightgreen https://thelearn-tech.github.io/" 
+	echo -e "$default Repository:$lightgreen https://github.com/thelearn-tech/Friday"
+    echo -e "$default Wikipedia: $lightgreen https://github.com/thelearn-tech/Friday/wiki"
+    echo -e "$default Suggestion:$lightgreen https://github.com/thelearn-tech/Friday/pulls"
+    echo -e "$default Report problem at $lightgreen https://github.com/thelearn-tech/Friday/issues"
+    echo ""
+
+}
+
+
+
+
+
+
+initate_uninstall() {
+	wget https://raw.githubusercontent.com/thelearn-tech/Friday/main/.Friday/uninstall_friday.sh
+	clear
+	chmod +x uninstall_friday.sh
+	./uninstall_friday.sh
+	
+}
+
+
+check_internet_connection()  {
+	printf "\033[1;33m"; echo ""   
+    echo -n " Checking for Internet:"  
+     #DO NOT COPY
+    ping -c 1 www.github.com > /dev/null 2>&1
+    if [[ "$?" != 0 ]]
+    then
+      # not connected
+      sleep 1
+      echo -e  "$red Not Connected"
+      sleep 0.7
+      echo -e "$default Please connect to Internet."
+      exit 1
+    else
+    	sleep 0.5
+    	echo -e "$green Connected"
+    	sleep 0.8
+    	clear
+    fi
+}
+
+
+ProBar() {
+
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+
+    printf "\r$yellow Getting Info :$blue [${_fill// /#}${_empty// /-}]$green ${_progress}%%"
+
+
+}
+
+ProBar_checksum() {
+
+    let _progress=(${1}*100/${2}*100)/100
+    let _done=(${_progress}*4)/10
+    let _left=40-$_done
+
+    _fill=$(printf "%${_done}s")
+    _empty=$(printf "%${_left}s")
+
+
+    printf "\r$yellow Checking :$blue [${_fill// /#}${_empty// /-}]$green ${_progress}%%"
+
+
+}
+
+ check-sum() {
+ 	echo -e "$yellow"
+	read -p " SHA Type :- " shatype
+    echo " "
+    read -p " Hash :- " userhash
+    echo " "
+    read -p " File :- " userfile
+    echo " "
+    echo -e "$default "
+ 
+     filehash=$($shatype $userfile | awk '{ print $1 }')
+
+
+    for number in $(seq ${_start} ${_end})
+    do 
+        sleep 0.05
+        ProBar_checksum ${number} ${_end}
+    done
+
+     if [[ $filehash == $userhash ]]
+      then
+      	clear
+    	echo " "
+        echo -e "$yellow sha/file:$default $shatype $userfile"
+        echo " "
+        echo -e "$yellow user hash:$default $userhash"
+        echo " "
+        echo -e "$yellow file hash:$default $filehash"
+        echo " "
+        echo " "
+        echo -e -n "$yellow Hash :"
+        sleep 1
+        echo -e "$green PASSED/MATCHED"
+        echo " "
+    else
+    	clear
+    	echo " "
+        echo -e "$yellow sha/file:$default $shatype $userfile"
+        echo " "
+        echo -e "$yellow user hash:$default $userhash"
+        echo " "
+        echo -e "$yellow file hash:$default $filehash"
+        echo " "
+        echo " "
+        echo -e -n "$yellow Hash :"
+        sleep 1
+        echo -e "$red FAILED/NOT_MATCHED"
+        echo " "
+       
+    fi
+ 
+
+ }
+
+ip_info() {
+	# my ip info
+	myipaddripapico=$(curl -s "https://ipapi.co//json" -L)
+    myipaddripapicom=$(curl -s "http://ip-api.com/json/" -L)
+    myip=$(echo $myipaddripapico | grep -Po '(?<="ip":)[^,]*' | tr -d '[]"')
+    mycity=$(echo $myipaddripapico | grep -Po '(?<="city":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    myregion=$(echo $myipaddripapico | grep -Po '(?<="region":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mycountry=$(echo $myipaddripapico | grep -Po '(?<="country_name":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mylat=$(echo $myipaddripapicom | grep -Po '(?<="lat":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mylon=$(echo $myipaddripapicom | grep -Po '(?<="lon":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mytime=$(echo $myipaddripapicom | grep -Po '(?<="timezone":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mypostal=$(echo $myipaddripapicom | grep -Po '(?<="zip":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    myisp=$(echo $myipaddripapico | grep -Po '(?<="org":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    myasn=$(echo $myipaddripapico | grep -Po '(?<="asn":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mycountrycode=$(echo $myipaddripapico | grep -Po '(?<="country_code":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mycurrency=$(echo $myipaddripapico | grep -Po '(?<="currency":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mylanguage=$(echo $myipaddripapico | grep -Po '(?<="languages":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+    mycalling=$(echo $myipaddripapico | grep -Po '(?<="country_calling_code":)[^},]*' | tr -d '[]"' | sed 's/\(<[^>]*>\|<\/>\|{1|}\)//g')
+
+    check_internet_connection
+
+    
+    for number in $(seq ${_start} ${_end})
+    do 
+        sleep 0.01
+        ProBar ${number} ${_end}
+    done
+
+
+    printf "\e[0m\n"
+    printf "\e[0m\n"
+    printf "  \e[0m\e[1;93m Ip Address    \e[0m\e[1;96m:\e[0m\e[1;92m   $myip\e[0m\n"
+    printf "  \e[0m\e[1;93m City          \e[0m\e[1;96m:\e[0m\e[1;92m   $mycity\e[0m\n"
+    printf "  \e[0m\e[1;93m Region        \e[0m\e[1;96m:\e[0m\e[1;92m   $myregion\e[0m\n"
+    printf "  \e[0m\e[1;93m Country       \e[0m\e[1;96m:\e[0m\e[1;92m   $mycountry\e[0m\n"
+    printf "\e[0m\n"
+    printf "  \e[0m\e[1;93m Latitude      \e[0m\e[1;96m:\e[0m\e[1;92m    $mylat\e[0m\n"
+    printf "  \e[0m\e[1;93m Longitude     \e[0m\e[1;96m:\e[0m\e[1;92m    $mylon\e[0m\n"
+    printf "  \e[0m\e[1;93m Time Zone     \e[0m\e[1;96m:\e[0m\e[1;92m    $mytime\e[0m\n"
+    printf "  \e[0m\e[1;93m Postal Code   \e[0m\e[1;96m:\e[0m\e[1;92m    $mypostal\e[0m\n"
+    printf "\e[0m\n"
+    printf "  \e[0m\e[1;93m ISP           \e[0m\e[1;96m:\e[0m\e[1;92m   $myisp\e[0m\n"
+    printf "  \e[0m\e[1;93m ASN           \e[0m\e[1;96m:\e[0m\e[1;92m   $myasn\e[0m\n"
+    printf "\e[0m\n"
+    printf "  \e[0m\e[1;93m Country Code  \e[0m\e[1;96m:\e[0m\e[1;92m   $mycountrycode\e[0m\n"
+    printf "  \e[0m\e[1;93m Currency      \e[0m\e[1;96m:\e[0m\e[1;92m   $mycurrency\e[0m\n"
+    printf "  \e[0m\e[1;93m Languages     \e[0m\e[1;96m:\e[0m\e[1;92m   $mylanguage\e[0m\n"
+    printf "  \e[0m\e[1;93m Calling Code  \e[0m\e[1;96m:\e[0m\e[1;92m   $mycalling\e[0m\n"
+    printf "\e[0m\n"
+    sleep 1
+    exit 1
+
+	
+	
+}
+
+update_me() {
+	
+	echo -e "$default Do you want to continue $default"
+	read -p " Y/n > " whbvc
+	if [ $whbvc == "Y" ] | [ $whbvc = "y" ]; then
+         cd $HOME
+         rm -rf Friday
+	     git clone https://github.com/thelearn-tech/Friday
+	     cd Friday
+	     chmod +x install.sh
+	     ./install.sh --update
+        
+	      
+	      
+	 else 
+	     echo " "
+	     echo -e "$red user interupt"
+	     
+	 fi         
+}
+
+
+force_update() {
+	check_internet_connection
+	echo " "
+	echo -e "$yellow Force Updating in 6 seconds"
+	echo -e "$default Ctrl+c  to stop "
+	sleep 7
+	echo "Forcing Update"
+	sleep 1.3
+	clear
+	cd
+	rm -rf Friday #removing Friday folder if exist
+	git clone https://github.com/thelearn-tech/Friday
+	cd Friday
+	chmod +x install.sh 2> /dev/null
+	./install.sh --update
+	
+
+	clear      
+	
+}
+
+battery_info() {
+	bat=$(termux-battery-status)
+	health=$(echo $bat | grep -Po '(?<="health":)[^,]*' | tr -d '[]"')
+	percent=$(echo $bat | grep -Po '(?<="percentage":)[^,]*' | tr -d '[]"')
+	plug=$(echo $bat | grep -Po '(?<="plugged":)[^,]*' | tr -d '[]"')
+	stat=$(echo $bat | grep -Po '(?<="status":)[^,]*' | tr -d '[]"')
+	temp=$(echo $bat | grep -Po '(?<="temperature":)[^,]*' | tr -d '[]"')
+	curent=$(echo $bat | grep -Po '(?<="current":)[^,]*' | tr -d '{}[]"')
+	
+	echo -e """
+	
+$green       Battery Status
+--------------------------
+Health:\e[0m $health $green
+Charge:\e[0m $percent % $green
+Status:\e[0m $stat $green
+Temperature:\e[0m $temp $green
+Plugged:\e[0m $plug $green
+Current:\e[0m $curent $default
+
+"""
+	
+}
+
+
+
+
+open_list() {
+	echo -e """ $yellow
+ Google apps	$green
+ 
+	
+  google$default to open google $green
+          
+  chrome$default to open chrome $green
+           
+  youtube$default to open youtube $green
+           
+  playstore$default to open google play store $green
+           
+  photos$default to open google photos $green
+           
+  drive$default to open google drive $green
+           
+  lens$default to open google lens $green
+           
+  gmail$default to open gmail $green
+           
+  play-games$default to open google play games $green
+           
+  maps$default to open google maps $green
+           
+  meet$default to open google meet $yellow
+  
+  
+           
+ Android apps  $green
+           
+  firefox$default to open Firefox $green  
+  
+  files$default to open google files $green
+
+  zarchives$default to open Zarchives $green
+
+  vnc$default to open vnc viewer $green
+
+  spotify$default to open spotify $green
+
+  whatsapp$default to open whatsapp $green
+
+  signal$default to open signal $default
+	
+	"""
+}
+
+
+self_test() {
+	
+	echo " "
+	echo -e -n "$yellow Python3.......> "
+	if ! which python >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi   
+ 	 
+ 	echo -e -n "$yellow Termux API....> "    
+	if ! dpkg -s termux-api >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi     
+ 	
+ 	echo -e -n "$yellow Neofetch......> "
+	if ! which neofetch >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+
+	echo -e -n "$yellow Net Tools.....> "
+	if ! dpkg -s net-tools >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+ 	
+ 	echo -e -n "$yellow Nmap..........> "
+	if ! which nmap >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+ 	
+ 	echo -e -n "$yellow Curl..........> "
+	if ! which curl >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+ 	
+ 	echo -e -n "$yellow Wget..........> "
+	if ! which wget >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+
+ 	echo -e -n "$yellow Nano..........> "
+	if ! which nano >/dev/null 2>&1; then
+	    sleep 1
+	    echo -e "$red Not Installed"
+	    echo " "
+	    
+	else
+	    sleep 1
+	    echo -e "$green Installed"
+ 	    echo " "
+ 	fi  
+ 	
+	echo " "
+	echo -e -n "$yellow Self Test.......> "
+	if ! which python >/dev/null 2>&1; then
+	     sleep 2
+	     echo -e "$red Failed"
+	else
+	    if ! dpkg -s termux-api >/dev/null 2>&1; then
+	       sleep 2
+	       echo -e "$red Failed"
+	    else
+	        if ! dpkg -s net-tools >/dev/null 2>&1; then
+	           sleep 2
+	           echo -e "$red Failed"
+	        else
+	        	if ! dpkg -s nmap >/dev/null 2>&1; then
+	               sleep 2
+	               echo -e "$red Failed"
+	           else
+	               if ! which wget >/dev/null 2>&1; then
+	                sleep 2
+	                echo -e "$red Failed"
+	                else
+	            	    if ! which nano >/dev/null 2>&1; then
+	                       sleep 2
+	                       echo -e "$red Failed"
+	                    else
+	                	    if ! which neofetch >/dev/null 2>&1; then
+	                           sleep 2
+	                           echo -e "$red Failed"
+	                        else
+	                            if ! which curl >/dev/null 2>&1; then
+	                               sleep 2
+	                               echo -e "$red Failed"
+	                            else
+	                               sleep 2
+	                               echo -e "$green Passed"
+	                               echo " "
+	                               echo ""
+	                            fi
+	                        fi
+	                    fi    
+	                fi
+	            fi     
+	        fi        
+	    fi          
+	fi                
+	             
+	    
+	    
+	                
+
+}
+
+
+
+
+
+
+
+# Internal commands
+
+
+if [[ $1 == "install" ]] # apt install
+ then
+     apt install $2
+     
+elif [[ $1 == "uninstall" ]] # apt remove
+ then
+     apt remove $2
+          
+elif [[ $1 == "reset" ]]  #  reset
+ then
+     reset
+     
+elif [[ $1 == "copy" ]] # copy file
+ then 
+     cp $2 $3
+     echo -e "$default $2 copyed to $3"
+     echo " "
+     
+elif [[ $1 == "move" ]] # move file
+ then 
+     mv $2 $3
+     echo -e "$default $2 is moved to $3"
+     echo " "
+  
+elif [[ $1 == "rename" ]] # rename
+ then 
+     mv $2 $3 
+     echo -e "$default $2 is renamed to $3"              
+     
+elif [[ $1 == "user" ]] # user
+ then 
+     echo -e "$green Current user is $yellow $id"
+     
+elif [[ $1 == "list" ]] # top
+ then 
+     if [[ $2 == "processes" ]]
+      then
+      top
+      else
+          echo -e "$green list$yellow requires extra argument $green 'processes' $default"
+          echo -e "$yellow Try$green friday list processes $default"
+          echo " "
+     fi
+
+elif [[ $1 == "auto" ]] # autoupdate
+ then 
+     if [[ $1 == "update" ]]
+       then
+       	   echo -e "$default Starting update in 5 seconds"
+       	   sleep 6
+           apt update -y
+           apt upgrade -y
+           pip3 install --upgrade pip
+           apt autoremove -y
+           exit 1
+       else 
+           echo -e "$green auto$yellow requires extra arg $green 'update'"
+           echo -e "$yellow Try$green friday auto update $default"
+           echo " "
+       fi      
+       
+elif [[ $1 == "device" ]] # neofetch
+ then 
+     if [[ $2 == "info" ]]
+       then
+           neofetch
+     else 
+         echo -e "$green device$yellow requires extra arg $green 'device info'"
+         echo -e "$yellow Try$green friday device info $default"
+         echo " "            
+      fi   
+
+elif [[ $1 == "delete" ]] # delete file/folder
+ then
+    
+     if [[ -f $2 ]]
+      then
+          rm -rf $2
+          echo -e "$green $2$default deleted succussfuly"
+          echo " "
+      else 
+      	  echo " "
+          echo -e "$green Friday:$default cannot delete$red '$2'$default; No such file or directory"
+          
+     fi    
+
+elif [[ $1 == "pwd" ]] # pwd
+ then 
+     pwd
+     
+elif [[ $1 == "weather" ]] # weather
+ then 
+ 	check_internet_connection
+    curl -s wttr.in/$country | head -7     
+             
+     
+elif [[ $1 == "ip" ]] # ip
+ then
+     if [[ $2 == "addr" ]]
+      then 
+          ifconfig | grep inet | awk '{ print $2 }'
+     
+     elif [[ $2 == "pub" ]] 
+       then 
+
+        mainlink=$(curl -s "https://ipapi.co//json" -L)
+        myip=$(echo $mainlink | grep -Po '(?<="ip":)[^,]*' | tr -d '[]"')    
+        
+        check_internet_connection
+         _start=1
+
+         _end=100
+
+        for number in $(seq ${_start} ${_end})
+        do 
+        	sleep 0.01
+            ProBar ${number} ${_end}
+        done
+
+
+
+        sleep 0.7
+        clear
+        echo " "
+        echo -e "$default Public IP Address: $yellow $myip"
+        echo " "
+
+     elif [[ $2 == "info" ]]
+       then  
+
+           ip_info    
+     else 
+           echo -e "$green ip$yellow requires extra argument $green 'addr' or 'pub' or 'info' $default"
+           echo -e "$yellow Try$green friday ip addr/pub/info $default"
+           echo " "
+     fi
+     
+         
+elif [[ $1 == "unzip" ]]
+ then
+ 	 echo -e "$default Unzipping '$2'"
+ 	 sleep 1
+ 	 echo " "
+     unzip $2
+        
+elif [[ $1 == "text" ]]
+ then 
+     if [[ $2 == "info" ]]
+      then
+          echo " "
+          echo -e "$green text $2rmation in $3"
+          echo " "
+          wordd=$(wc -w $3 | tr -d "$3")
+          linee=$(wc -l $3 | tr -d "$3")
+          chart=$(wc -c $3 | tr -d "$3")
+
+          echo -e "$yellow Words :$default $wordd"
+          echo -e "$yellow Lines :$default $linee"
+          echo -e "$yellow Characters :$default $chart"
+
+          echo " "
+     else
+         
+         echo -e "$green text$yellow requires extra arg $green 'info <fileName>' "  
+         echo -e "$yellow Try$green friday text info <fileName> $default"
+          echo " "
+      fi
+elif [[ $1 == "file" ]]
+ 	then
+ 		file $2
+
+elif [[ $1 == "what-file-is" ]]
+ 	then
+ 		file $2
+
+elif [[ $1 == "edit" ]]
+  then
+      nano $2
+
+elif [[ $1 == "run" ]]
+	then 
+		echo -e "$default running: ./$2"
+        sleep 1
+		./$2
+
+elif [[ $1 == "download" ]]
+  then
+  	  check_internet_connection
+      wget $2
+    
+elif [[ $1 == "apache2" ]]
+  then
+      if [[ $2 == "start" ]]
+       then
+           apachectl 
+           echo " "
+           sleep 0.7
+           echo -e "$green apache2 started $default"
+           
+       elif [[ $2 == "stop" ]]
+         then
+             apachectl stop
+             echo ""
+             echo -e "$green apache2 stoped $default"
+       
+       elif [[ $2 == "restart" ]]
+        then
+            apachectl restart
+            echo ""
+            echo -e "$green apache2 restarted $default"             
+       
+       else 
+           echo -e "$green apache2$yellow requires extra arg $green 'start/stop/restart'"
+           echo -e "$yellow Try$green apache2 start/stop/restart $default"
+           echo " "
+       fi       
+          
+elif [[ $1 == "xx" ]]
+ then 
+    
+    echo -e "$default running: chmod +x $2"  
+    chmod +x $2  
+    echo " "
+    
+elif [[ $1 == "ux" ]]
+ then 
+    echo -e "$default running: chmod -x $2"  
+    chmod -x $2  
+    echo " " 
+
+elif [[ $1 == "view" ]]
+ then 
+     cat $2
+ 
+elif [[ $1 == "check-sum" ]]
+ then
+    check-sum     
+ 
+ elif [[ $1 == "open-port" ]]
+ 	then
+ 		nmap 127.0.0.1
+ 
+ 
+ 
+ 
+     
+# Termux api extension       
+     
+
+elif [[ $1 == "enable" ]]
+ then
+     if [[ $2 == "wifi" ]]
+      then 
+          termux-wifi-enable true
+       else
+           echo -e "$green enable$yellow requires extra arg $green 'wifi'"
+           echo -e "$yellow Try$green friday enable wifi $default"
+            echo " "
+     fi         
+          
+elif [[ $1 == "disable" ]]
+ then 
+     if [[ $2 == "wifi" ]]
+      then
+          termux-wifi-enable false
+          
+     else
+         echo -e "$green disable$yellow requires extra arg $green 'wifi'"
+           echo -e "$yellow Try$green friday disable wifi $default"
+            echo " "
+     fi
+         
+elif [[ $1 == "scan" ]]
+ then
+     if [[ $2 == "wifi" ]]
+      then 
+          termux-wifi-scaninfo
+      
+     else
+         echo -e "$green scan$yellow requires extra arg $green 'wifi'"
+           echo -e "$yellow Try$green friday scan wifi $default"
+            echo " "
+         
+     fi                                                   
+elif [[ $1 == "battery" ]]
+ then
+     if [[ $2 == "status" ]]
+      then
+          battery_info
+      else 
+           echo -e "$green battery$yellow requires extra arg $green 'status'"
+           echo -e "$yellow Try$green friday battery status $default"
+            echo " "
+      fi 
+elif [[ $1 == "turn" ]]
+ then 
+          if [[ $2 == "torch" ]]
+           then 
+               if [[ $3 == "on" ]]
+                then 
+                    termux-torch on
+                    echo -e "torch$green ON $default"
+             
+               elif [[ $3 == "off" ]]
+                then 
+                    termux-torch off
+                    echo -e "torch$yellow OFF $default"
+               else
+                   echo -e "$green torch$yellow requires extra arg $green 'on/off'"
+                   echo -e "$yellow Try$green friday torch on/off $default"
+                    echo " "
+               fi
+               
+          else 
+              echo -e "$green turn$yellow requires extra arg $green 'torch'"
+              echo -e "$yellow Try$green friday turn torch on/off $default"
+               echo " "
+          fi     
+    
+elif [[ $1 == "torch" ]]
+ then
+     if [[ $2 == "on" ]]
+      then 
+          termux-torch on      
+          echo -e "torch$green ON $default"
+      elif [[ $2 == "off" ]]
+       then 
+           termux-torch off
+           echo -e "torch$yellow OFF $default" 
+       else 
+            echo -e "$green torch$yellow requires extra arg $green 'on/off'"
+            echo -e "$yellow Try$green friday torch on/off $default"
+             echo " "
+       fi            
+           
+elif [[ $1 == "say" ]]
+  then
+      termux-tts-speak $2 $3 $4 $5 $6 $7
+
+elif [[ $1 == "read" ]]
+	then
+		termux-tts-speak | cat $2 
+ 
+elif [[ $1 == "camera" ]]
+ then
+     if [[ $2 == "info" ]]
+       then 
+           termux-camera-info
+      else
+           echo -e "$green camera$yellow requires extra arg $green 'info'"
+           echo -e "$yellow Try$green friday camers info $default"
+           echo " "
+       fi
+elif [[ $1 == "set" ]]
+ then
+     if [[ $2 == "brightness" ]]
+      then
+         termux-brightness $3
+     elif [[ $2 == "timer" ]]
+      then
+           python3 $HOME/.Friday/timer.py 
+           bash $HOME/.Friday/noti.sh  
+     else
+         echo -e "$green set$yellow requires extra arg $green 'brightness' or 'timer'"
+         echo -e "$yellow Try$green friday set brightness <value 0-255> $default"
+         echo " "
+      fi                                     
+elif [[ $1 == "get" ]]
+ then 
+     if [[ $2 == "location" ]]
+      then 
+          termux-location
+       else
+            echo -e "$green get$yellow requires extra arg $green 'location'"
+            echo -e "$yellow Try$green friday get location $default"
+             echo " "
+       fi          
+           
+           
+elif [[ $1 == "take" ]]
+ then 
+     if [[ $2 == "photo" ]]
+      then
+          termux-camera-photo 0
+          echo -e "$green Taking Photo with back cam"
+     elif [[ $2 == "selfie" ]]
+      then 
+          termux-camera-photo 1
+      else
+           echo -e "$green take$yellow requires extra arg $green 'photo/selfie'"
+           echo -e "$yellow Try$green friday torch photo/selfie $default"
+            echo " "
+      fi
+                    
+elif [[ $1 == "list" ]]
+ then 
+     if [[ $2 == "contacts" ]]
+      then 
+           termux-contact-list
+     else
+          echo -e "$green list$yellow requires extra arg $green 'contacts'"
+          echo -e "$yellow Try$green friday list contacts $default"
+           echo " "
+         
+     fi
+     
+elif [[ $1 == "open" ]]
+ then 
+     if [[ $2 == "list" ]]
+      then
+         open_list
+     elif [[ $2 == "chrome" ]]
+      then 
+          am start -n com.android.chrome/com.google.android.apps.chrome.Main
+   
+     elif [[ $2 == "google" ]]
+      then
+          am start -n  com.google.android.googlequicksearchbox/com.google.android.apps.gsa.searchnow.SearchNowActivity
+
+     elif [[ $2 == "youtube" ]]
+       then 
+           am start -n com.google.android.youtube/com.google.android.apps.youtube.app.WatchWhileActivity
+
+     elif [[ $2 == "playstore" ]]
+       then
+           am start -n  com.android.vending/com.android.vending.AssetBrowserActivity
+
+     elif [[ $2 == "photos" ]]
+       then
+           am start -n com.google.android.apps.photos/com.google.android.apps.photos.home.HomeActivity
+
+     elif [[ $2 == "drive" ]]
+       then
+            am start -n com.google.android.apps.docs/com.google.android.apps.docs.drive.app.navigation.NavigationActivity
+       
+     elif [[ $2 == "lens" ]]
+        then   
+            am start -n com.google.android.googlequicksearchbox/com.google.android.apps.lens.MainActivity
+        
+     elif [[ $2 == "gmail" ]]
+        then
+           am start -n com.google.android.gm/com.google.android.gm.ConversationListActivityGmail            
+         
+     elif [[ $2 == "play-games" ]]
+        then
+           am start -n  com.google.android.play.games/com.google.android.gms.games.ui.v2.MainActivity     
+     
+     elif [[ $2 == "maps" ]]
+        then
+           am start -n com.google.android.apps.maps/com.google.android.maps.MapsActivity
+        
+     elif [[ $2 == "meet" ]]
+        then
+           am start -n com.google.android.apps.meetings/com.google.android.libraries.communications.conference.ui.home.HomeActivity  
+           
+    elif [[ $2 == "firefox" ]]
+        then
+            am start -n org.mozilla.firefox/org.mozilla.fenix.HomeActivity       
+     
+     elif [[ $2 == "files" ]]
+        then
+           am start -n com.google.android.documentsui/com.android.documentsui.files.FilesActivity
+
+     elif [[ $2 == "zarchives" ]]
+        then
+           am start -n  ru.zdevs.zarchiver/ru.zdevs.zarchiver.ZArchiver     
+           
+     elif [[ $2 == "vnc" ]]
+        then
+           am start -n com.realvnc.viewer.android/com.realvnc.viewer.android.app.ConnectionChooserActivity  
+           
+     elif [[ $2 == "spotify" ]]
+        then
+           am start -n com.spotify.music/com.spotify.music.MainActivity  
+           
+     elif [[ $2 == "whatsapp" ]]
+        then
+           am start -n  com.whatsapp/com.whatsapp.HomeActivity 
+
+    elif [[ $2 == "signal" ]] 
+        then 
+            am start -n org.thoughtcrime.securesms/org.thoughtcrime.securesms.RoutingActivity            
+        
+    else
+          echo -e "$red Wrong app name or app not supported"
+          echo -e "$default use << open list >> to get a list of supported apps"
+          
+      fi
+            
+ # Internal commands       
+     
+elif [[ $1 == "add" ]]
+ then 
+     ans=$(( $2 + $3 ))
+     echo ""
+     echo -e "$yellow $2 + $3 =$green $ans $default"
+     echo ""
+                        
+elif [[ $1 == "sub" ]]
+ then 
+     ans=$(( $2 - $3 ))
+     echo ""
+     echo -e "$yellow $2 - $3 =$green $ans $default"
+     echo ""
+     
+elif [[ $1 == "multi" ]]
+ then 
+     ans=$(( $2 * $3 ))
+     echo ""
+     echo -e "$yellow $2 x $3 =$green $ans $default"
+     echo ""
+                
+elif [[ $1 == "div" ]]
+ then
+     if [[ $2 > $3 ]] 
+      then
+          ans=$(( $2 / $3 ))
+          echo ""
+          echo -e "$yellow $2 / $3 =$green $ans $default"
+          echo ""
+       else 
+           echo -e "$red First number has to grater then Second number. $default"    
+       fi
+       
+elif [[ $1 == "area" ]]
+ then 
+     if [[ $2 == "of" ]]
+      then
+    
+          if [[ $3 == "square" ]] 
+           then
+               echo " "
+               echo -e "$cyan Formula Side^2"
+               ans=$(( $4 * $4 ))    
+               echo -e "$green Area of Square with side of $4m is $ans sq.m $default"           
+               echo ' '   
+          elif [[ $3 == "rectriangle" ]]
+           then
+               echo " "
+               echo -e "$cyan Formula lenght X width"
+               ans=$(( $4 * $5 ))    
+               echo -e "$green Area of Rectriangle with length of $4m and width of $5m is $ans sq.m $default"       
+               echo " "
+           else
+               echo -e "$green area of$yellow requires extra arg$green 'square/rectriangle'"
+               echo -e "$yellow Try$green friday area of square <side>"
+               echo -e "$yellow Try$green friday area of rectriangle <lenght> <width> $default"
+               echo " "  
+       
+           fi
+     else
+         echo -e "$green area$yellow requires extra arg$green 'of'"
+         echo -e "$yellow Try$green friday area of square <side>"
+         echo -e "$yellow Try$green friday area of rectriangle <lenght> <width> $default"
+         echo " "  
+  
+     fi     
+      
+elif [[ $1 == "perimeter" ]]
+ then 
+     if [[ $2 == "of" ]]
+      then
+    
+          if [[ $3 == "square" ]] 
+           then
+               echo " "
+               echo -e "$cyan Formula 4 X Side"
+               ans=$(( 4 * $4 ))    
+               echo -e "$green Perimeter of Square with side of $4m is $ans sq.m $default"           
+               echo ' '   
+          elif [[ $3 == "rectriangle" ]]
+           then
+               echo " "
+               echo -e "$cyan Formula 2(lenght + width)"
+               ad=$(( $4 + $5 ))
+               ans=$(( 2 * $ad ))    
+               echo -e "$green Perimeter of Rectriangle with length of $4m and width of $5m is $ans sq.m $default"       
+               echo " "
+           else
+               echo -e "$green perimeter of$yellow requires extra arg $green 'square/rectriangle'"
+               echo -e "$yellow Try$green friday perimeter of square <side>"
+               echo -e "$yellow Try$green friday perimeter of rectriangle <lenght> <width> $default"
+               echo " "  
+       
+           fi
+     else
+         echo -e "$green area$yellow requires extra arg $green 'of'"
+         echo -e "$yellow Try$green friday area of square <side>"
+         echo -e "$yellow Try$green friday area of rectriangle <lenght> <width> $default"
+         echo " "  
+       
+     fi          
+            
+elif [[ $1 == "info" ]]
+ then 
+     banner
+     
+elif [[ $1 == "oddeven" ]]
+ then 
+     rem=$(( $2 % 2 ))
+ 
+      if [ $rem -eq 0 ]
+       then
+           echo -e "$yellow $2$green is a even number"
+           echo ""
+      else
+           echo -e "$yellow $2$green is a odd number"
+           echo ""
+      fi
+
+
+# python base commands
+
+
+elif [[ $1 == "toss" ]]
+ then
+     python3 $HOME/.Friday/python/toss.py
+
+                                 
+elif [[ $1 == "chat" ]]
+ then 
+     python3 $HOME/.Friday/python/chat.py
+   
+elif [[ $1 == "rps" ]]
+ then 
+     python3 $HOME/.Friday/python/rock_paper_scissor.py
+     
+               
+ # Friday control commands    
+
+elif [[ $1 == "--report-issue" ]]
+ then 
+     am start -n com.android.chrome/com.google.android.apps.chrome.Main -d 'https://github.com/thelearn-tech/Friday/issues'
+          
+elif [[ $1 == "--check-update" ]]
+ then
+ 	check_internet_connection
+    echo -e -n "$yellow Checking......... "
+    sleep 1.4
+    echo -e "$green Done"
+    sleep 2
+    clear
+    git_ver=$(curl -s "https://raw.githubusercontent.com/thelearn-tech/Friday/main/.Friday/.version" -L)
+     
+    if [[ $ver == $git_ver ]] 
+        then	
+           echo -e "$green Friday $default is up to date"
+           echo " "
+    else
+           echo " " 
+           echo -e "$green Update Found"
+           echo " "
+           echo -e -n "$yellow Latest VERSION : "
+           sleep 0.5          
+           echo -e "$green $git_ver"
+           echo " "
+           echo -e -n  "$orange Current VERSION : "
+           sleep 0.5
+           echo -e "$orange $ver" 
+           echo " "
+           update_me
+          
+    fi      
+
+elif [[ $1 == "--force-update" ]]
+ then 
+    force_update
+
+elif [[ $1 == "--version" ]]
+  then 
+    echo -e "$default Version $orange$ver"
+    echo " "
+
+ 
+elif [[ $1 == "--uninstall" ]]
+ then
+ 	check_internet_connection
+    initate_uninstall 
+
+elif [[ $1 == "--self-test" ]]
+	then
+		self_test
+
+elif [[ $1 == "--help" ]]
+    then
+        help_text		
+else
+    
+	if ! which $1 >/dev/null 2>&1; then
+	   echo " "
+	   echo -e "$yellow I don't know that"
+	   echo -e "$default Try$green friday --help $default"
+	   echo " "
+	   exit 1
+		
+    else
+    	echo  -e  "$default running:$green $1 $2 $3 $4 $5 $6 $7 $8 $9 $default  "
+		$1 $2 $3 $4 $5 $6 $7 $8 $9
+		exit 1
+       
+	fi
+fi         
