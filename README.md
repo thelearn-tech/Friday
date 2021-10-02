@@ -25,6 +25,8 @@
  so 
 **Download Termux API.**
 
+**For more details visit Friday Wiki**
+
 ### [Friday Wiki](https://github.com/thelearn-tech/Friday/wiki)
 
 ### [Suggestions](https://github.com/thelearn-tech/Friday/pulls)
