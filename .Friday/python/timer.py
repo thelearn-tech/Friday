@@ -26,4 +26,6 @@ countdown(int(t))
 
 
 os.system('termux-notification --title "Friday" --content "Your Your set timer of ' + t +' second is over" --button1 "remove" --button1-action "termux-notification-remove 346969" --id 346969 | termux-vibrate')
+
 exit()
+os.system('exit 1')
