@@ -5,7 +5,7 @@
 ![](https://img.shields.io/badge/Code_in-Python-blue)
 
 ![](https://img.shields.io/badge/Maintained-Yes-green)
-![](https://img.shields.io/badge/Current_Version-1.3.2-orange)
+![](https://img.shields.io/badge/Current_Version-1.3.3-orange)
 
 
 <a href="https://github.com/thelearn-tech/Friday/issues">
@@ -57,13 +57,6 @@
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114338.jpg)
 ![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114415.jpg)
 
-
-
-## Know bugs
-
-`friday set timer` doesn't work first time.
-So, I will recommend setting a `2`sec timer for first
-time, then u can set time as long as u want in **Seconds**.
 
 
 # update
