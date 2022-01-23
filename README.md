@@ -13,6 +13,10 @@
 <a href="https://github.com/thelearn-tech/Friday/pulls">
       <img alt="Pulls" src="https://img.shields.io/github/issues-pr/thelearn-tech/Friday?color=0088ff" />
 
+
+[![HitCount](http://hits.dwyl.com/thelearn-tech/Friday.svg)](http://hits.dwyl.com/thelearn-tech/Friday)
+
+
 </br>
 <null></null>
 
