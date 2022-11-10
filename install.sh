@@ -27,7 +27,7 @@ check_internet_connection()  {
     printf "\033[1;33m"; echo ""                                
     echo -n " Checking for Internet:"
      #DO NOT COPY
-    ping -c 1 www.github.com > /dev/null 2>&1
+    ping -c 1 www.google.com > /dev/null 2>&1
     if [[ "$?" != 0 ]]       
       then                                                             
     # not connected
