@@ -1,6 +1,7 @@
 # Friday
 
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20210630_101559.jpg)
+![](.repo/friday.jpg)
+<br>
 ![](https://img.shields.io/badge/Code_in-Shell-green)
 ![](https://img.shields.io/badge/Code_in-Python-blue)
 
@@ -13,14 +14,12 @@
 <a href="https://github.com/thelearn-tech/Friday/pulls">
       <img alt="Pulls" src="https://img.shields.io/github/issues-pr/thelearn-tech/Friday?color=0088ff" />
 
-
+<!--
 [![HitCount](http://hits.dwyl.com/thelearn-tech/Friday.svg)](http://hits.dwyl.com/thelearn-tech/Friday)
+-->
 
-
-</br>
-<null></null>
-
-</br>
+<br>
+<br>
 
 ***Friday*** is a Personal Assistant for [**Termux**](https://play.google.com/store/apps/details?id=com.termux).
 
@@ -39,6 +38,7 @@
 
 # Installation
 
+```
 `git clone https://github.com/thelearn-tech/Friday`
 
 `cd Friday`
@@ -46,20 +46,21 @@
 `chmod +x  install.sh`
 
 `./install.sh`
+```
 
 # Friday info
 
 
 
 
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211103_134702.jpg)
+![](.repo/friday-info.jpg)
 
 
 
 
 # Commands
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114338.jpg)
-![](https://raw.githubusercontent.com/thelearn-tech/img/main/IMG_20211002_114415.jpg)
+![](.repo/friday-commands-list-1.jpg)
+![](.repo/friday-commands-list-2.jpg)
 
 
 
