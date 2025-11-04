@@ -39,13 +39,13 @@
 # Installation
 
 ```
-`git clone https://github.com/thelearn-tech/Friday`
+git clone https://github.com/thelearn-tech/Friday
 
-`cd Friday`
+cd Friday
 
-`chmod +x  install.sh`
+chmod +x  install.sh
 
-`./install.sh`
+./install.sh
 ```
 
 # Friday info
